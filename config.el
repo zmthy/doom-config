@@ -122,25 +122,3 @@ Returns the exit code."
 (after! magit
   (transient-append-suffix 'magit-fetch "r" '("i" "into local" magit-fetch-into-local))
   (transient-append-suffix 'magit-push "-n" '("-s" "Skip Gitlab CI" "--push-option=ci.skip")))
-
-(setq-default
-
- ;; Fill column at 80.
- fill-column 80
-
- ;; Sentences are followed by only one space.
- sentence-end-double-space nil
-
- ;; Don't move past eol.
- evil-move-beyond-eol nil
-
- ;; Set the default indentation to 2, instead of 4.
- standard-indent 2
- evil-shift-width 2
- sh-basic-offset 2)
-
-;; Alert on trailing whitespace, and show tabs to distinguish from spaces.
-(setq whitespace-style '(face trailing tab tab-mark))
-
-;; Disable cleverparens movement: use evil-lisp-state instead.
-(setq evil-cleverparens-use-additional-movement-keys nil)
