@@ -106,8 +106,9 @@ Returns the exit code."
 (defun match-macos-theme ()
   "Update the theme to light or dark depending on current the macOS theme."
   (interactive)
-  (setq doom-theme (if (dark-modep) 'doom-one 'doom-one-light))
-  (doom/reload-theme))
+  (let ((target-theme (if (dark-modep) 'doom-one 'doom-one-light)))
+    (if (not (equal doom-theme target-theme))
+        (load-theme target-theme))))
 
 (defun magit-fetch-into-local (remote branch args)
   "Fetch a remote branch into the matching local branch."
