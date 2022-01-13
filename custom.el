@@ -9,6 +9,8 @@
  '(evil-shift-width 2)
  '(fill-column 80)
  '(magit-branch-adjust-remote-upstream-alist '(("develop" "develop")))
+ '(magit-clone-default-directory "~/Code/")
+ '(magit-clone-set-remote\.pushDefault t)
  '(sentence-end-double-space nil)
  '(standard-indent 2)
  '(whitespace-style '(face trailing tab tab-mark)))
