@@ -15,11 +15,8 @@
  '(magit-clone-set-remote\.pushDefault t)
  '(org-directory "~/Documents/")
  '(sentence-end-double-space nil)
- '(show-trailing-whitespace t)
  '(standard-indent 2)
  '(user-mail-address "tim@zmthy.net")
- '(whitespace-line-column nil)
- '(whitespace-style '(face trailing tab tab-mark))
  '(ws-butler-keep-whitespace-before-point nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
