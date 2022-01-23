@@ -2,3 +2,4 @@
 ;;; $DOOMDIR/packages.el
 
 (package! emacs-fish)
+(package! deno-fmt)

@@ -70,3 +70,5 @@ Returns the exit code."
 (after! magit
   (transient-append-suffix 'magit-fetch "r" '("i" "into local" magit-fetch-into-local))
   (transient-append-suffix 'magit-push "-n" '("-s" "Skip Gitlab CI" "--push-option=ci.skip")))
+
+(add-hook 'typescript-mode-hook 'deno-fmt-mode)
