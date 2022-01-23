@@ -1,5 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+(setq doom-font (font-spec :family "Fantasque Sans Mono" :size 14 :weight 'regular))
+
 (defmacro add-hooks (&rest hooks)
   "Register a number of hooks at once, with the hook names auto-quoted.
 Provide program bodies rather than functions for the hook values."
