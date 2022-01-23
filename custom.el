@@ -6,7 +6,7 @@
  '(confirm-kill-emacs nil)
  '(custom-safe-themes
    '("835868dcd17131ba8b9619d14c67c127aa18b90a82438c8613586331129dda63" "246a9596178bb806c5f41e5b571546bb6e0f4bd41a9da0df5dfbca7ec6e2250c" default))
- '(display-line-numbers-type 'relative)
+ '(display-line-numbers-type nil)
  '(evil-move-beyond-eol nil)
  '(evil-shift-width 2)
  '(fill-column 80)
