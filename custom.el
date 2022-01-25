@@ -10,6 +10,8 @@
  '(evil-move-beyond-eol nil)
  '(evil-shift-width 2)
  '(fill-column 80)
+ '(lsp-ui-sideline-ignore-duplicate t)
+ '(lsp-ui-sideline-show-hover t)
  '(magit-branch-adjust-remote-upstream-alist '(("develop" "develop")))
  '(magit-clone-default-directory "~/Code/")
  '(magit-clone-set-remote\.pushDefault t)
