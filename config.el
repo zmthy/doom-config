@@ -72,3 +72,5 @@ Returns the exit code."
   (transient-append-suffix 'magit-push "-n" '("-s" "Skip Gitlab CI" "--push-option=ci.skip")))
 
 (add-hook 'typescript-mode-hook 'deno-fmt-mode)
+
+(add-hook 'after-init-hook #'global-prettier-mode)
