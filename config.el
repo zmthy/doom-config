@@ -77,3 +77,6 @@ Returns the exit code."
                 markdown-mode
                 org-mode
                 text-mode)
+
+(hook-setq (python-mode fill-column 79)
+           (typescript-mode fill-column 120))
