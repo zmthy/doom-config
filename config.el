@@ -14,8 +14,7 @@ Provide program bodies rather than functions for the hook values."
   "Register all of the given hooks as having the expected behaviour of a
 text-mode."
   `(add-hooks . ,(mapcar (lambda (hook)
-                           `(,hook (setq sentence-end-double-space t)
-                                   (auto-fill-mode)))
+                           `(,hook (auto-fill-mode)))
                          hooks)))
 
 (defmacro hook-setq (&rest binds)
@@ -72,3 +71,9 @@ Returns the exit code."
   (transient-append-suffix 'magit-push "-n" '("-s" "Skip Gitlab CI" "--push-option=ci.skip")))
 
 (add-hook 'after-init-hook #'global-prettier-mode)
+
+(add-text-modes LaTeX-mode
+                TeX-mode
+                markdown-mode
+                org-mode
+                text-mode)
