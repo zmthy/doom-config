@@ -70,7 +70,8 @@ Returns the exit code."
   (transient-append-suffix 'magit-fetch "r" '("i" "into local" magit-fetch-into-local))
   (transient-append-suffix 'magit-push "-n" '("-s" "Skip Gitlab CI" "--push-option=ci.skip")))
 
-(add-hook 'after-init-hook #'global-prettier-mode)
+(add-hook 'js-mode 'prettier-mode)
+(add-hook 'typescript-mode 'prettier-mode)
 
 (add-text-modes LaTeX-mode
                 TeX-mode
@@ -80,3 +81,6 @@ Returns the exit code."
 
 (hook-setq (python-mode fill-column 79)
            (typescript-mode fill-column 120))
+
+(add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
+(add-hook 'window-configuration-change-hook 'auto-virtualenv-set-virtualenv)

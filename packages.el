@@ -4,3 +4,4 @@
 (package! emacs-fish)
 (package! graphql-mode)
 (package! prettier)
+(package! auto-virtualenv)
