@@ -84,3 +84,8 @@ Returns the exit code."
 
 (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
 (add-hook 'window-configuration-change-hook 'auto-virtualenv-set-virtualenv)
+
+;; Add C-d key binding to vterm
+(map! :after vterm
+      :map vterm-mode-map
+      :ni "C-c C-d" #'vterm-send-C-d)
