@@ -16,6 +16,7 @@
  '(magit-clone-default-directory "~/Code/")
  '(magit-clone-set-remote\.pushDefault t)
  '(org-directory "~/Documents/")
+ '(python-indent-def-block-scale 1)
  '(sentence-end-double-space nil)
  '(standard-indent 2)
  '(user-mail-address "tim@zmthy.net")
