@@ -5,3 +5,4 @@
 (package! graphql-mode)
 (package! prettier)
 (package! auto-virtualenv)
+(package! python-coverage)

@@ -91,3 +91,8 @@ Returns the exit code."
 (map! :after vterm
       :map vterm-mode-map
       :ni "C-c C-d" #'vterm-send-C-d)
+
+(map! :localleader
+      :map python-mode-map
+      (:prefix ("c" . "code")
+       :desc "Toggle coverage overlay" "c" #'python-coverage-overlay-mode))
