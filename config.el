@@ -64,6 +64,15 @@ Returns the exit code."
          (magit-fetch-arguments)))
   (magit-git-fetch remote (cons (concat branch ":" branch) args)))
 
+(defun doom/ediff-init-and-example ()
+  "Open an ediff session to compare init.example.el and init.el."
+  (interactive)
+  (ediff-files (concat doom-private-dir "init.el")
+               (concat doom-emacs-dir "init.example.el")))
+
+(define-key! help-map
+  "di" #'doom/ediff-init-and-example)
+
 (run-at-time 0 300 'match-macos-theme)
 
 (after! magit
