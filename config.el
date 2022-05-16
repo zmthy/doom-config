@@ -105,3 +105,13 @@ Returns the exit code."
       :map python-mode-map
       (:prefix ("c" . "code")
        :desc "Toggle coverage overlay" "c" #'python-coverage-overlay-mode))
+
+(defun brew-services-restart-nginx ()
+  "Restart nginx."
+  (interactive)
+  (call-process "brew" nil nil nil "services" "restart" "nginx")
+  (princ 'done))
+
+(map! :leader
+      (:prefix ("!" . "execute")
+       :desc "Restart nginx" "n" #'brew-services-restart-nginx))
