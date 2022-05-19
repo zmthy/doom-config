@@ -125,3 +125,12 @@ Returns the exit code."
 (map! :leader
       (:prefix ("!" . "execute")
        :desc "Restart nginx" "n" #'brew-services-restart-nginx))
+
+(defun pre-commit-run-all-files ()
+  "Run pre-commit on every file in the current project."
+  (interactive)
+  (projectile-run-async-shell-command-in-root "pre-commit run --all-files"))
+
+(map! :leader
+      (:prefix "g"
+       :desc "Run pre-commit hook" "h" #'pre-commit-run-all-files))
