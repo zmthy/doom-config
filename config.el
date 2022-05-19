@@ -103,8 +103,18 @@ Returns the exit code."
 
 (map! :localleader
       :map python-mode-map
-      (:prefix ("c" . "code")
+      (:prefix ("c" . "coverage")
        :desc "Toggle coverage overlay" "c" #'python-coverage-overlay-mode))
+
+(defun python-coverage-report ()
+  "Provide a coverage report after running pytest with the cov plugin."
+  (interactive)
+  (projectile-run-async-shell-command-in-root "coverage report -m"))
+
+(map! :localleader
+      :map python-mode-map
+      (:prefix ("c" . "coverage")
+       :desc "Coverage report" "r" #'python-coverage-report))
 
 (defun brew-services-restart-nginx ()
   "Restart nginx."
