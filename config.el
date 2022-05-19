@@ -119,7 +119,7 @@ Returns the exit code."
 (defun brew-services-restart-nginx ()
   "Restart nginx."
   (interactive)
-  (call-process "brew" nil nil nil "services" "restart" "nginx")
+  (shell-command "brew services restart nginx")
   (princ 'done))
 
 (map! :leader
