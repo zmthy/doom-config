@@ -113,3 +113,9 @@ Returns the exit code."
 (map! :leader
       (:prefix "g"
        :desc "Run pre-commit hook" "h" #'pre-commit-run-all-files))
+
+;; Add leader-mapped commands for flycheck (over the existing error list map)
+(after! flycheck
+  (map! :leader
+        (:prefix-map ("c" . "code")
+         "x" flycheck-command-map)))
