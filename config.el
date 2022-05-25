@@ -118,7 +118,8 @@ Returns the exit code."
 (after! flycheck
   (map! :leader
         (:prefix-map ("c" . "code")
-         "x" flycheck-command-map)))
+         "x" flycheck-command-map))
+  (setq-default flycheck-python-mypy-config (cons ".mypy.ini" flycheck-python-mypy-config)))
 
 (setq-hook! 'python-mode-hook
   flycheck-checker 'python-pylint)
