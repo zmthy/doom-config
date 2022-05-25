@@ -2,28 +2,6 @@
 
 (setq doom-font (font-spec :family "Fantasque Sans Mono" :size 14 :weight 'regular))
 
-(defmacro add-hooks (&rest hooks)
-  "Register a number of hooks at once, with the hook names auto-quoted.
-Provide program bodies rather than functions for the hook values."
-  `(progn . ,(mapcar (lambda (hook)
-                       `(add-hook ',(car hook)
-                                  (lambda () (progn . ,(cdr hook)))))
-                     hooks)))
-
-(defmacro add-text-modes (&rest hooks)
-  "Register all of the given hooks as having the expected behaviour of a
-text-mode."
-  `(add-hooks . ,(mapcar (lambda (hook)
-                           `(,hook (auto-fill-mode)))
-                         hooks)))
-
-(defmacro hook-setq (&rest binds)
-  "Register a function for a hook that sets the given variables."
-  `(add-hooks . ,(mapcar (lambda (bind)
-                           `(,(car bind) (setq-default . ,(cdr bind))))
-                         binds)))
-
-
 (defun applescript (lines)
   "Executes a list of lists of primitive objects as AppleScript.
 Returns the exit code."
@@ -79,14 +57,18 @@ Returns the exit code."
   (transient-append-suffix 'magit-fetch "r" '("i" "into local" magit-fetch-into-local))
   (transient-append-suffix 'magit-push "-n" '("-s" "Skip Gitlab CI" "--push-option=ci.skip")))
 
-(add-text-modes LaTeX-mode-hook
+(dolist (hook '(LaTeX-mode-hook
                 TeX-mode-hook
                 markdown-mode-hook
                 org-mode-hook
-                text-mode-hook)
+                text-mode-hook))
+  (add-hook hook #'auto-fill-mode))
 
-(hook-setq (python-mode-hook fill-column 79)
-           (typescript-mode-hook fill-column 120))
+(setq-hook! 'python-mode-hook
+  fill-column 79)
+
+(setq-hook! 'typescript-mode-hook
+  fill-column 120)
 
 (add-hook 'js-mode-hook #'prettier-mode)
 (add-hook 'js-jsx-mode-hook #'prettier-mode)
