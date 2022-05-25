@@ -119,3 +119,6 @@ Returns the exit code."
   (map! :leader
         (:prefix-map ("c" . "code")
          "x" flycheck-command-map)))
+
+(setq-hook! 'python-mode-hook
+  flycheck-checker 'python-pylint)
