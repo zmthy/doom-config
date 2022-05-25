@@ -123,3 +123,6 @@ Returns the exit code."
 
 (setq-hook! 'python-mode-hook
   flycheck-checker 'python-pylint)
+
+(after! python
+  (add-hook 'before-save-hook 'py-isort-before-save))
