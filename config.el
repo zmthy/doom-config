@@ -83,19 +83,16 @@ Returns the exit code."
       :map vterm-mode-map
       :ni "C-c C-d" #'vterm-send-C-d)
 
-(map! :localleader
-      :map python-mode-map
-      (:prefix ("c" . "coverage")
-       :desc "Toggle coverage overlay" "c" #'python-coverage-overlay-mode))
-
 (defun python-coverage-report ()
   "Provide a coverage report after running pytest with the cov plugin."
   (interactive)
   (projectile-run-async-shell-command-in-root "coverage report -m"))
 
-(map! :localleader
+(map! :after python
+      :localleader
       :map python-mode-map
-      (:prefix ("c" . "coverage")
+      (:prefix ("c" . "code")
+       :desc "Toggle coverage overlay" "c" #'python-coverage-overlay-mode
        :desc "Coverage report" "r" #'python-coverage-report))
 
 (defun brew-services-restart-nginx ()
