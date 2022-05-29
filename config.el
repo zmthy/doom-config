@@ -126,3 +126,7 @@ Returns the exit code."
 
 (after! python
   (add-hook 'before-save-hook 'py-isort-before-save))
+
+;; Set up Python debugger
+(after! dap-mode
+  (setq dap-python-debugger 'debugpy))
