@@ -6,3 +6,5 @@
 (package! prettier)
 (package! auto-virtualenv)
 (package! python-coverage)
+
+(package! nose :disable t)
