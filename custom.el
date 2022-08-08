@@ -10,6 +10,7 @@
  '(evil-move-beyond-eol nil)
  '(evil-shift-width 2)
  '(fill-column 80)
+ '(js-indent-level 2)
  '(lsp-ui-sideline-ignore-duplicate t)
  '(lsp-ui-sideline-show-hover t)
  '(magit-branch-adjust-remote-upstream-alist '(("develop" "develop")))
@@ -19,6 +20,7 @@
  '(python-indent-def-block-scale 1)
  '(sentence-end-double-space nil)
  '(standard-indent 2)
+ '(typescript-indent-level 2)
  '(user-mail-address "tim@zmthy.net")
  '(ws-butler-keep-whitespace-before-point nil))
 (custom-set-faces
