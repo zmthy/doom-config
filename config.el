@@ -67,9 +67,6 @@ Returns the exit code."
 (setq-hook! 'python-mode-hook
   fill-column 79)
 
-(setq-hook! 'typescript-mode-hook
-  fill-column 120)
-
 (add-hook 'js-mode-hook #'prettier-mode)
 (add-hook 'js-jsx-mode-hook #'prettier-mode)
 (add-hook 'typescript-mode-hook #'prettier-mode)
